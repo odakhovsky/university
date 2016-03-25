@@ -25,7 +25,6 @@ public class UserDaoImpl implements UserDao {
         return sessionFactory.getCurrentSession();
     }
 
-
     @Override
     public User findByLogin(String login) {
         return (User) getSession().createCriteria(User.class)

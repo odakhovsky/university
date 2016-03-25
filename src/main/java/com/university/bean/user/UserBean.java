@@ -1,4 +1,4 @@
-package com.university.bean;
+package com.university.bean.user;
 
 import com.university.model.Role;
 import com.university.model.User;
@@ -8,20 +8,18 @@ import java.util.Objects;
 /**
  * Created by volodymyrO on 25.03.16.
  */
-public class UserBean {
+public class UserBean extends SimpleUserBean {
 
-    private int id;
-    private String name;
     private String login;
     private boolean active;
     private Role.Name role;
 
     public UserBean() {
+        super();
     }
 
     public UserBean(User user){
-        setId(user.getId());
-        setName(user.getName());
+        super(user.getId(), user.getName());
         if (!Objects.isNull(user.getRole())){
             setRole(user.getRole().getName());
         }
@@ -29,21 +27,6 @@ public class UserBean {
         setLogin(user.getLogin());
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getLogin() {
         return login;

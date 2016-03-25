@@ -1,9 +1,6 @@
 package com.university.controller;
 
-import com.university.bean.UserBean;
-import com.university.model.Role;
-import com.university.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.university.bean.user.UserBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
