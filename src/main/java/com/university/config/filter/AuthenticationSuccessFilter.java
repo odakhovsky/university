@@ -1,6 +1,6 @@
 package com.university.config.filter;
 
-import com.university.bean.UserBean;
+import com.university.bean.user.UserBean;
 import com.university.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

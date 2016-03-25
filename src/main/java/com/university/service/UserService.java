@@ -1,6 +1,6 @@
 package com.university.service;
 
-import com.university.bean.UserBean;
+import com.university.bean.user.UserBean;
 import com.university.model.Role;
 
 /**

@@ -1,6 +1,6 @@
 package com.university.service.impl;
 
-import com.university.bean.UserBean;
+import com.university.bean.user.UserBean;
 import com.university.dao.RoleDao;
 import com.university.dao.UserDao;
 import com.university.model.Role;
