@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .authorizeRequests()
-                .antMatchers("/classroom/").hasRole("TEACHER")
+                .antMatchers("/classroom/**").hasRole("TEACHER")
                 .anyRequest().authenticated()
                 .and();
         http.logout()

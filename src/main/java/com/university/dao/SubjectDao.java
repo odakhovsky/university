@@ -12,4 +12,5 @@ public interface SubjectDao {
     List<Subject> findAllForTeacher(int teacherId);
     Subject findByName(String name);//todo in future get with ignore case
     Subject findById(int id);
+    Subject findByGroupAndTeacher(int groupId, int teacherId);
 }

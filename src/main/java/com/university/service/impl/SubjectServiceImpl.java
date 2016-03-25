@@ -1,6 +1,7 @@
 package com.university.service.impl;
 
 import com.university.bean.subject.SubjectBean;
+import com.university.bean.subject.TeachersSubjectBean;
 import com.university.dao.SubjectDao;
 import com.university.dao.UserDao;
 import com.university.model.Role;
@@ -65,6 +66,11 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public SubjectBean getById(int id) {
         return new SubjectBean(subjectDao.findById(id));
+    }
+
+    @Override
+    public TeachersSubjectBean getExtendedById(int id) {
+        return new TeachersSubjectBean(subjectDao.findById(id));
     }
 
     @Override

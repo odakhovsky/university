@@ -5,6 +5,8 @@ package com.university.model;
  */
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "USER")
@@ -32,6 +34,14 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "ROLE")
     private Role role;
+
+    @ManyToMany
+    @JoinTable(
+            name = "TEACHER_SUBJECT",
+            joinColumns = {@JoinColumn(name = "SUBJECT_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "USER_ID")}
+    )
+    private List<Subject> subjects = new ArrayList<>();
 
     public User(){}
 
@@ -81,5 +91,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
     }
 }

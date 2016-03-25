@@ -16,4 +16,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/classroom/classroom.jsp"/>
     </definition>
 
+    <definition name="/classroom/subjects/details" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/jsp/classroom/subjects/details.jsp"/>
+    </definition>
+
 </tiles-definitions>

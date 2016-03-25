@@ -16,10 +16,17 @@ public class TeachersSubjectBean extends SubjectBean {
 
     public TeachersSubjectBean(Subject subject){
         super(subject);
-        if (!Objects.isNull(subject.getTeaches())){
+        subject.getId();
             teachers.addAll(
                     subject.getTeaches().stream().map(SimpleUserBean::new).collect(Collectors.toList())
             );
-        }
+    }
+
+    public List<SimpleUserBean> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<SimpleUserBean> teachers) {
+        this.teachers = teachers;
     }
 }

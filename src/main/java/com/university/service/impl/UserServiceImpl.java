@@ -27,7 +27,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserBean getUserByLogin(String login) {
-        return new UserBean(userDao.findByLogin(login));
+
+        User user = userDao.findByLogin(login);
+
+        return new UserBean(user);
     }
 
     @Override

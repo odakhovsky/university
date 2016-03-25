@@ -30,6 +30,14 @@ public class Subject {
     )
     private List<User> teaches = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(
+            name = "GROUP_SUBJECT",
+            joinColumns = {@JoinColumn(name = "GROUP_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "SUBJECT_ID")}
+    )
+    private List<Group> groups = new ArrayList<>();
+
     public Subject(){}
 
     public Integer getId() {
@@ -62,6 +70,14 @@ public class Subject {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 
     public void addTeacher(User teacher){

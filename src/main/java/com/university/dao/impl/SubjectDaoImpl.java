@@ -1,6 +1,7 @@
 package com.university.dao.impl;
 
 import com.university.dao.SubjectDao;
+import com.university.model.Group;
 import com.university.model.Subject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -52,5 +53,19 @@ public class SubjectDaoImpl implements SubjectDao {
         return (Subject) getSession().createCriteria(Subject.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult();
+    }
+
+    @Override
+    public Subject findByGroupAndTeacher(int groupId, int teacherId) {
+        return (Subject) getSession().createCriteria(Subject.class, "subject")
+                .createAlias("subject.groups", "group")
+                .createAlias("subject.teaches", "teacher")
+                .add(
+                        Restrictions.and(
+                                Restrictions.eq("teacher.id", teacherId),
+                                Restrictions.eq("group.active", true),
+                                Restrictions.eq("subject.active", true)
+                        )
+                ).uniqueResult();
     }
 }

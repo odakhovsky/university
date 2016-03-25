@@ -2,6 +2,7 @@ package com.university.service;
 
 
 import com.university.bean.subject.SubjectBean;
+import com.university.bean.subject.TeachersSubjectBean;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ public interface SubjectService {
     void remove(int subjectId);
     List<SubjectBean> getAllForTeacher(int teacherId);
     SubjectBean getById(int id);
+    TeachersSubjectBean getExtendedById(int id);
     SubjectBean getByName(String name);
     boolean isNameUnique(String name);
     void addTeacherToSubject(int subjectId, int teacherId);
