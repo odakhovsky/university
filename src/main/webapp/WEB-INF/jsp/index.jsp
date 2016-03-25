@@ -1,4 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="row">
-    hello world
+    <p class="alert alert-danger">hello world</p>
 </div>

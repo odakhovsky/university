@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><tiles:insertAttribute name="title" ignore="true"/></title>
+    <title>Hello</title>
     <tiles:insertAttribute name="header"/>
 
 </head>

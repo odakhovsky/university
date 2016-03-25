@@ -24,6 +24,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 
         rootContext.register(WebAppConfig.class);
         rootContext.register(HibernateConfig.class);
+        rootContext.register(SecurityConfig.class);
         servletContext.addListener(new ContextLoaderListener(rootContext));
         rootContext.setServletContext(servletContext);
 

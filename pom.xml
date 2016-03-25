@@ -170,7 +170,7 @@
 
         </dependencies>
 
-        <build>
+        <!--<build>
             <finalName>university</finalName>
             <plugins>
 
@@ -218,5 +218,5 @@
                     </configuration>
                 </plugin>
             </plugins>
-        </build>
+        </build>-->
     </project>
