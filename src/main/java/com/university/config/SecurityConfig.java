@@ -1,8 +1,10 @@
 package com.university.config;
 
 
+import com.university.config.filter.AuthenticationSuccessFilter;
 import com.university.service.impl.UserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -43,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll()
                 .and();
 
-       /* http.formLogin()
+        http.formLogin()
                 .loginPage("/")
                 .loginProcessingUrl("/j_spring_security_check")
                 .successHandler(getAuthenticationSuccess())
@@ -54,15 +56,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .authorizeRequests()
-                .antMatchers("/admin*//**").hasRole("ADMIN")
-                .antMatchers("/cabinet/").authenticated()
-                .antMatchers("/cabinet/control/members*//*").hasRole("OWNER")
+                .antMatchers("/classroom/").hasRole("TEACHER")
                 .anyRequest().authenticated()
                 .and();
         http.logout()
                 .logoutSuccessUrl("/")
                 .logoutUrl("/logout")
-                .permitAll();*/
+                .permitAll();
+
+        http.headers().xssProtection();
     }
 
 
@@ -92,10 +94,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new ProviderManager(providers);
     }
 
-   /* @Bean
+    @Bean
     public SavedRequestAwareAuthenticationSuccessHandler getAuthenticationSuccess() {
         AuthenticationSuccessFilter authenticationSuccess = new AuthenticationSuccessFilter();
-        authenticationSuccess.setDefaultTargetUrl("/cabinet/");
+        authenticationSuccess.setDefaultTargetUrl("/redirect");
         return authenticationSuccess;
-    }*/
+    }
 }

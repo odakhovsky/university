@@ -5,14 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Created by volodymyrO on 24.03.16.
+ * Created by volodymyrO on 25.03.16.
  */
 @Controller
-public class Index {
+@RequestMapping(value = "/classroom")
+public class ClassroomController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String index(){
-        return "index";
+    public String home(){
+        return "classroom/classroom";
     }
 
 }
