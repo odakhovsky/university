@@ -20,6 +20,9 @@
         <!-- Page Content -->
         <div class="container">
             <div class="row">
+                <tiles:insertAttribute name="login"/>
+            </div>
+            <div class="row">
                 <div class="col-lg-12">
                     <tiles:insertAttribute name="body"/>
                 </div>

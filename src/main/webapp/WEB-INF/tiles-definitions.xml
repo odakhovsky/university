@@ -2,13 +2,18 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="baseLayout" template="/WEB-INF/jsp/layout/layout.jsp">
+    <definition name="layoutMain" template="/WEB-INF/jsp/layout/layout-main.jsp">
         <put-attribute name="header" value="/WEB-INF/jsp/layout/common/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/jsp/layout/common/footer.jsp"/>
+        <put-attribute name="login" value="/WEB-INF/jsp/layout/common/login.jsp"/>
     </definition>
 
-    <definition name="index" extends="baseLayout">
+    <definition name="index" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
+    </definition>
+
+    <definition name="classroom/classroom" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/jsp/classroom/classroom.jsp"/>
     </definition>
 
 </tiles-definitions>
