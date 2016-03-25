@@ -1,0 +1,32 @@
+.content{
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.header{
+  margin-top: 50px;
+}
+
+.login-form{
+  margin-top: 20px;
+}
+
+.login-form .login-button{
+  width: 150px !important;
+}
+
+.login-form .login-warning{
+  font-size: large!important;
+}
+
+.header-name{
+  font-size: large;
+}
+
+.access-container{
+  margin-top: 50px;
+}
+
+.details-subject-title{
+  width: 15%;
+}

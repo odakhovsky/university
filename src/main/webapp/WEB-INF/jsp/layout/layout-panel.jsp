@@ -19,21 +19,21 @@
     <div id="body">
 
         <div class="row header">
-            <div class="col-lg-12">
-                <div class="row">
-                    <img width="700" src="http://placehold.it/800x300" class="center-block">
-                </div>
-                <div class="row">
-                    <h2 align="center">Welcome to our university</h2>
+            <div class="col-xs-4">
+                <img width="200" src="http://placehold.it/800x300">
+                <span class="header-name">University</span>
+            </div>
+            <div class="col-xs-8">
+                <div class="pull-right">
+                    ${userBean.name} <a href="/logout"><i class="fa fa-sign-out"></i> </a>
                 </div>
             </div>
         </div>
-        <div class="row content">
+        <div class="row content content access-container">
 
-            <tiles:insertAttribute name="menu"/>
 
             <!-- Blog Entries Column -->
-            <div class="col-lg-12">
+            <div class="col-lg-12 well">
                 <tiles:insertAttribute name="body"/>
             </div>
 

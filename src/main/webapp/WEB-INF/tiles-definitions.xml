@@ -5,18 +5,27 @@
     <definition name="layoutMain" template="/WEB-INF/jsp/layout/layout-main.jsp">
         <put-attribute name="header" value="/WEB-INF/jsp/layout/common/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/jsp/layout/common/footer.jsp"/>
-        <put-attribute name="login" value="/WEB-INF/jsp/layout/common/login.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/layout/common/menu.jsp"/>
+    </definition>
+
+    <definition name="layoutPanel" template="/WEB-INF/jsp/layout/layout-panel.jsp">
+        <put-attribute name="header" value="/WEB-INF/jsp/layout/common/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/layout/common/footer.jsp"/>
     </definition>
 
     <definition name="index" extends="layoutMain">
         <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
 
-    <definition name="classroom/classroom" extends="layoutMain">
+    <definition name="login" extends="layoutMain">
+        <put-attribute name="body" value="/WEB-INF/jsp/login.jsp"/>
+    </definition>
+
+    <definition name="classroom/classroom" extends="layoutPanel">
         <put-attribute name="body" value="/WEB-INF/jsp/classroom/classroom.jsp"/>
     </definition>
 
-    <definition name="/classroom/subjects/details" extends="layoutMain">
+    <definition name="/classroom/subjects/details" extends="layoutPanel">
         <put-attribute name="body" value="/WEB-INF/jsp/classroom/subjects/details.jsp"/>
     </definition>
 

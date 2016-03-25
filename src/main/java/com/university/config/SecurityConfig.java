@@ -42,14 +42,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/login").permitAll()
                 .and();
 
         http.formLogin()
                 .loginPage("/")
                 .loginProcessingUrl("/j_spring_security_check")
                 .successHandler(getAuthenticationSuccess())
-                .failureUrl("/?error=accessDenied")
+                .failureUrl("login?error=accessDenied")
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
                 .permitAll()

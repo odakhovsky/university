@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * Created by volodymyrO on 25.03.16.
  */
 public class TeachersSubjectBean extends SubjectBean {
-    private List<SimpleUserBean> teachers = new ArrayList<>();
+    private List<SimpleUserBean> teachers = new ArrayList<SimpleUserBean>();
 
     public TeachersSubjectBean(Subject subject){
         super(subject);
