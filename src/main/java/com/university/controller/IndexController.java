@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  */
 @Controller
 @SessionAttributes("userBean")
+@RequestMapping(value = "/")
 public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,4 +33,8 @@ public class IndexController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/login" , method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
 }
